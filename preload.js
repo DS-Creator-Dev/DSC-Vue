@@ -41,12 +41,11 @@ contextBridge.exposeInMainWorld(
 );
 
 const preload = {
-  open_project: ()=>void(async() => {
-    var path = await ipc_renderer.invoke("open_project")
+  open_dialog: (options)=>void(async() => {
+    var path = await ipc_renderer.invoke("open_dialog", options)
       .then((path)=>{
         return path.filePaths[0];
       })
-    console.log(path)
     return path;
   })(),
 }

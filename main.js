@@ -37,19 +37,8 @@ app.on("window-all-closed", () => {
   }
 });
 
-ipc_main.handle('open_project', async () => {
-  var options = {
-    properties: ["openFile"],
-    filters: [{
-      name: "DSC Projects",
-      extensions: ["DSCProj", "JSON"],
-    }]
-  }
-  return await open_dialog(win, options);
-})
-
-async function open_dialog(parent_window, options){
-  return await dialog.showOpenDialog(parent_window, options)
+ipc_main.handle('open_dialog', async (_, options) => {
+  return await dialog.showOpenDialog(win, options)
     .then((result) => { if (result) { return result; } })
     .catch((error) => { console.error('Show open dialog error: ' + error); });
-}
+})

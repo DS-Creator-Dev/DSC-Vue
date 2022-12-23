@@ -3,7 +3,8 @@
         <div class="h-full flex items-center">
             <div>
                 <div class="flex flex-col items-center" style="text-align:center;">
-                    <img src="../../../public/icon_x32.png" class="w-32 h-32"/>
+                    <!-- TODO: Find out why "icon_x32.png" won't load in Electron -->
+                    <img src="../../../public/icon_x7.png" class="w-32 h-32"/>
                     <p class="font-bold text-3xl">DS <span class="text-teal-500">Creator</span></p>
                 </div>
                 <div class="flex flex-row gap-1 mt-2 text-white">
