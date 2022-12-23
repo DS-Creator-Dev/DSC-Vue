@@ -1,11 +1,17 @@
 // Home
 import Home from './home/pages/Home.vue'
 
+// Projects
+import New_Project from './project/pages/New_Project.vue'
+
 import * as VueRouter from 'vue-router'
 
 const routes = [
   // Home
   { path: '/', component: Home },
+
+  // Projects
+  { path: '/new', component: New_Project }
 ]
 
 const router = VueRouter.createRouter({
